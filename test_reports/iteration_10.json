@@ -1,0 +1,113 @@
+{
+  "summary": "Tested three new features for Fairy Star Vacation Homes: 1) Map view toggle on /stays page with Leaflet/OpenStreetMap, 2) Customer Journey interactive timeline page at /journey, 3) CRM Webhook configuration in admin settings. All features working correctly. 9/9 backend tests passed, all UI tests passed.",
+
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+
+  "passed_tests": [
+    "Stays page: Grid/List/Map view toggle buttons visible and functional",
+    "Map view: Leaflet map renders with dark CartoDB tiles",
+    "Map markers: 21 orange pin markers displayed for properties with coordinates",
+    "Map popup: Clicking marker shows popup with property image, name, area/city, beds/baths/guests, and price",
+    "Map popup navigation: Clicking popup navigates to property detail page (/stays/{id})",
+    "View toggle switching: Switching between Grid, List, and Map views works correctly",
+    "Customer Journey page: Accessible at /journey with animated hero section",
+    "Customer Journey timeline: 6 steps (Explore & Discover, Plan & Inquire, Book & Pay Securely, Arrive & Check In, Enjoy Your Stay, Check Out & Stay Connected)",
+    "Customer Journey animations: Framer Motion animations working with scroll reveals",
+    "Journey CTA buttons: 'Explore Stays' navigates to /stays, 'Contact Us' navigates to /contact",
+    "Navigation: 'JOURNEY' link appears in navbar between SERVICES and CORPORATE",
+    "Admin Settings: CRM Webhook section appears with enable toggle, URL input, and test button",
+    "CRM webhook API: GET /api/admin/crm/settings returns settings (enabled, webhook_url)",
+    "CRM webhook API: PUT /api/admin/crm/settings saves settings correctly",
+    "CRM webhook API: Endpoints require authentication (401 without token)",
+    "Admin Property Form: map_lat and map_lng fields present in Location section",
+    "Admin Property Form: Coordinate fields display existing values (e.g., 25.203344, 55.278754)",
+    "Property API: Properties list includes map_lat and map_lng fields with valid UAE coordinates"
+  ],
+
+  "test_report_links": [
+    "/app/backend/tests/test_new_features.py",
+    "/app/test_reports/pytest/pytest_new_features.xml"
+  ],
+
+  "action_items": [],
+
+  "critical_code_review_comments": [
+    "PropertyMap.jsx: Uses react-leaflet with custom orange SVG markers - well implemented",
+    "StaysPage.jsx: View mode state ('grid'|'list'|'map') toggles cleanly with conditional rendering",
+    "CustomerJourneyPage.jsx: Good use of Framer Motion with useInView for scroll-based animations",
+    "SettingsPage.jsx: CRM Webhook section follows same pattern as email settings - consistent UX",
+    "PropertyForm.jsx: map_lat/map_lng fields properly bound with data-testid attributes for testing",
+    "Layout.jsx: Navigation links array includes Journey between Services and Corporate - correct ordering",
+    "Backend server.py: CRM webhook endpoints (GET/PUT/POST test) properly secured with auth middleware"
+  ],
+
+  "updated_files": [],
+
+  "success_rate": {
+    "backend": "100% (9/9 tests passed)",
+    "frontend": "100% (all UI elements verified)"
+  },
+
+  "test_credentials": {
+    "admin_email": "admin@fairystar.ae",
+    "admin_password": "admin123"
+  },
+
+  "seed_data_creation": "None - used existing 21 properties with migrated coordinates",
+
+  "retest_needed": false,
+
+  "should_main_agent_self_test": false,
+
+  "context_for_next_testing_agent": "Three new features tested and working: 1) Map view on /stays uses react-leaflet with CartoDB dark tiles and orange markers. 21 properties have coordinates populated. Marker popups show property details and navigate on click. 2) /journey page has Framer Motion animated timeline with 6 steps, CTAs link to /stays and /contact. 3) CRM webhook in admin settings has CRUD endpoints at /api/admin/crm/settings and /api/admin/crm/test. PropertyForm has map_lat and map_lng fields in Location section. MOCKED APIs: Email (Resend) disabled, Cloud Storage S3/R2 disabled, CRM Webhook real but requires external URL.",
+
+  "mocked_apis": {
+    "email": "RESEND_ENABLED - not configured (API key missing)",
+    "storage": "STORAGE_ENABLED=false - S3/R2 cloud storage disabled",
+    "crm_webhook": "Real endpoint but requires external webhook URL to test delivery"
+  },
+
+  "features_tested": {
+    "map_view_toggle": {
+      "status": "PASS",
+      "details": "Grid/List/Map buttons visible, Map shows Leaflet with dark tiles and 21 orange markers"
+    },
+    "map_markers_popup": {
+      "status": "PASS",
+      "details": "Popups show property image, title, area/city, beds/baths/guests, price (AED/night)"
+    },
+    "popup_navigation": {
+      "status": "PASS",
+      "details": "Clicking popup navigates to /stays/{property-id}"
+    },
+    "customer_journey_page": {
+      "status": "PASS",
+      "details": "6 timeline steps with icons, titles, descriptions, Framer Motion animations"
+    },
+    "journey_cta_buttons": {
+      "status": "PASS",
+      "details": "Explore Stays -> /stays, Contact Us -> /contact"
+    },
+    "navbar_journey_link": {
+      "status": "PASS",
+      "details": "JOURNEY link between SERVICES and CORPORATE in navigation"
+    },
+    "crm_webhook_settings": {
+      "status": "PASS",
+      "details": "Enable toggle, URL input, Test button all present and functional"
+    },
+    "property_form_coordinates": {
+      "status": "PASS",
+      "details": "Map Latitude and Map Longitude fields with data-testid attributes"
+    }
+  }
+}

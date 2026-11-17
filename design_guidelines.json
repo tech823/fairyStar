@@ -1,0 +1,95 @@
+{
+  "identity": {
+    "persona": "E1 - The Anti-AI Designer",
+    "philosophy": "Fusion over Imitation. Emotion First. Content is King.",
+    "core_concept": "Liquid Luxury - A seamless blend of Dubai's heat (Orange) and modern coolness (Ash Grey/Glass)."
+  },
+  "visual_language": {
+    "theme": "Hybrid Premium (Light/Ash Grey Base with Dark/Glass Hero Sections)",
+    "colors": {
+      "primary": "#F3A15A",
+      "primary_rgb": "243, 161, 90",
+      "secondary": "#333D47",
+      "secondary_rgb": "51, 61, 71",
+      "accent_white": "#FFFFFF",
+      "glass_base": "rgba(255, 255, 255, 0.05)",
+      "glass_border": "rgba(255, 255, 255, 0.2)",
+      "text_dark": "#1A202C",
+      "text_light": "#FFFFFF"
+    },
+    "typography": {
+      "headings": {
+        "family": "Outfit, sans-serif",
+        "weight": "300 (Light) to 500 (Medium)",
+        "letter_spacing": "-0.02em",
+        "case": "Sentence case for elegance, Uppercase for labels"
+      },
+      "body": {
+        "family": "DM Sans, sans-serif",
+        "weight": "400 (Regular)",
+        "line_height": "1.6"
+      }
+    },
+    "effects": {
+      "liquid_glass": {
+        "description": "The signature look. Not just frosted, but wet and refractive.",
+        "css_rule": "backdrop-filter: blur(12px) saturate(180%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 0 0 1px rgba(255,255,255,0.1);"
+      },
+      "liquid_button": {
+        "css_rule": "relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(243,161,90,0.4)] hover:-translate-y-1 active:scale-95 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:animate-[shimmer_1.5s_infinite]"
+      }
+    }
+  },
+  "layout_strategy": {
+    "grid_system": "The Bento Grid (Asymmetric)",
+    "spacing": "Generous. Use p-12, py-24, gap-12. Avoid cramping.",
+    "container": "max-w-[1400px] mx-auto px-6",
+    "hero_section": "Full viewport height (100vh). Video or high-res image background. Center aligned text with 3D elements floating.",
+    "glass_overlay": "Use glass panels floating over large images to hold text. Never place text directly on busy images without a scrim or glass card."
+  },
+  "components": {
+    "LiquidButton": {
+      "instruction": "Create a custom button component that implements the 'liquid_button' effect defined above. Use Brand Orange for the primary action, and Glass for secondary.",
+      "path": "/app/frontend/src/components/ui/LiquidButton.jsx"
+    },
+    "GlassCard": {
+      "instruction": "A container with the 'liquid_glass' effect. Use for Property Cards, Service Cards, and Testimonials.",
+      "path": "/app/frontend/src/components/ui/GlassCard.jsx"
+    },
+    "Hero3D": {
+      "instruction": "Implement a R3F canvas in the Hero section. Show floating abstract geometric shapes (Sphere, Torus) in Glass material that slowly rotate. They should refract the background.",
+      "library": "@react-three/fiber @react-three/drei",
+      "path": "/app/frontend/src/components/Hero3D.jsx"
+    },
+    "StatsCounter": {
+      "instruction": "Animated counters that count up when in view. Use big, thin typography.",
+      "path": "/app/frontend/src/components/StatsCounter.jsx"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1677508398331-58597cd61618?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMGx1eHVyeSUyMHZpbGxhJTIwaW5maW5pdHklMjBwb29sJTIwcGFsbSUyMGp1bWVpcmFoJTIwYWVyaWFsfGVufDB8fHx8MTc3MzY2MTUwOHww&ixlib=rb-4.1.0&q=85",
+      "luxury_car": "https://images.unsplash.com/photo-1728458602396-4f9c36579aba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBjaGF1ZmZldXIlMjBzZXJ2aWNlJTIwZHViYWklMjByb2xscyUyMHJveWNlfGVufDB8fHx8MTc3MzY2MTUwOXww&ixlib=rb-4.1.0&q=85",
+      "desert_safari": "https://images.unsplash.com/photo-1597656303066-85eb659aeb29?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxkZXNlcnQlMjBzYWZhcmklMjBkdWJhaSUyMGx1eHVyeSUyMHRvdXJ8ZW58MHx8fHwxNzczNjYxNTEwfDA&ixlib=rb-4.1.0&q=85",
+      "concierge": "https://images.unsplash.com/photo-1677129666186-d29eba893fe3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHxjb25jaWVyZ2UlMjBzZXJ2aWNlJTIwbHV4dXJ5JTIwaG90ZWwlMjBzdGFmZnxlbnwwfHx8fDE3NzM2NjE1MTF8MA&ixlib=rb-4.1.0&q=85",
+      "modern_interior": "https://images.unsplash.com/photo-1758548157747-285c7012db5b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBpbnRlcmlvciUyMGRlc2lnbiUyMGx1eHVyeXxlbnwwfHx8fDE3NzM2NjE1MTJ8MA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "universal_guidelines": [
+    "Do NOT use gradients for dark colors.",
+    "Do NOT center align the app container.",
+    "Use 'sonner' for toasts.",
+    "Use framer-motion for all scroll animations (fade-in-up, stagger).",
+    "Ensure 3D elements do not block text readability.",
+    "Mobile Responsiveness: 3D elements might need to be hidden or simplified on mobile.",
+    "Add 'data-testid' to all interactive elements."
+  ],
+  "instructions_to_main_agent": [
+    "1. Install dependencies: `npm install framer-motion @react-three/fiber @react-three/drei lucide-react`.",
+    "2. Update `tailwind.config.js` to include new glass utilities if needed (though they are partly there).",
+    "3. Create the `LiquidButton` and `GlassCard` components first.",
+    "4. Refactor `HomePage.jsx` to use the new Hero section with R3F and the provided images.",
+    "5. Ensure the Booking Wizard uses the Glass aesthetic.",
+    "6. Verify contrast ratios on all text over images."
+  ]
+}
